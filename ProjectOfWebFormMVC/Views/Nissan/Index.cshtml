@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ProjectOfWebFormMVC.Models.Nissan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    h2 {
+        color: #0e387a;
+        font-family: Castellar;
+    }
+
+        h2:hover {
+            color: #9fafca;
+        }
+
+    .table tr th {
+        background-color: #9CC3D5FF;
+    }
+
+        .table tr th:hover {
+            background-color: #0063B2FF;
+        }
+</style>
+<h2><b>NISSAN</b></h2>
+
+
+<p style="color:red">@Html.Raw(TempData["Delete"])</p>
+<p style="color:blue">@Html.Raw(TempData["Update"])</p>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Compony_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car_Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model_Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Compony_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car_Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Owner_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model_Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car_Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Car_Id }) |
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.Car_Id })
+            </td>
+
+        </tr>
+    }
+
+</table>

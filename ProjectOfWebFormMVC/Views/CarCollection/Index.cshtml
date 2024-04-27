@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        // background-color:#333;
+    }
+
+    li {
+        float: left;
+        margin: 15px;
+        margin-top: 0;
+        background-color: antiquewhite;
+    }
+
+        li:hover {
+            background-color: black;
+        }
+    hr {
+        border: none;
+        height: 5px;
+        background-color: black;
+    }
+    h1{
+        font-size:100px;
+    }
+    h1:hover{
+        background-color:aquamarine;
+        border-radius:10px;
+    }
+
+</style>
+<body>
+    <h1><center>-:CAR COLLECTION:-</center></h1>
+    <hr />
+    <ul>
+        <li>@Html.ActionLink("MARUTI SUZUKI", "Index", "MarutiSuzuki")</li>
+        <li>@Html.ActionLink("HYUNDAI", "Index", "Hyundai")</li>
+        <li>@Html.ActionLink("TATA", "Index", "Tata")</li>
+        <li>@Html.ActionLink("HONDA", "Index", "Honda")</li>
+        <li>@Html.ActionLink("MAHINDRA", "Index", "Mahindra")</li>
+        <li>@Html.ActionLink("VOLKSWAGEN", "Index", "Volkswagen")</li>
+        <li>@Html.ActionLink("SKODA", "Index", "Skoda")</li>
+        <li>@Html.ActionLink("TOYOTA", "Index", "Toyota")</li>
+        <li>@Html.ActionLink("MG", "Index", "Mg")</li>
+        <li>@Html.ActionLink("KIA", "Index", "Kia")</li>
+        <li>@Html.ActionLink("JEEP", "Index", "Jeep")</li>
+        <li>@Html.ActionLink("NISAAN", "Index", "Nissan")</li>
+        <li>@Html.ActionLink("FORD", "Index", "Ford")</li>
+        
+    </ul>
+</body>
+

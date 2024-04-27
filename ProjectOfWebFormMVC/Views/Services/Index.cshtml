@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ProjectOfWebFormMVC.Models.Services>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    h2 {
+        color: #0e387a;
+        font-family: Castellar;
+    }
+
+        h2:hover {
+            color: #9fafca;
+        }
+
+    .table tr th {
+        background-color: #9CC3D5FF;
+    }
+
+        .table tr th:hover {
+            background-color: #0063B2FF;
+        }
+</style>
+<h2><b>SERVICES</b></h2>
+<p style="color:blue">@Html.Raw(TempData["Insert"])</p>
+<p style="color:blue">@Html.Raw(TempData["Update"])</p>
+<p style="color:red">@Html.Raw(TempData["Delete"])</p>
+
+<p><b>@Html.ActionLink("ADD CAR INFORMATION", "Create")</b></p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>OPERATIONS</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Car_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Car_No)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Owner_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.City)
+    </td>
+    <td>
+        @Html.ActionLink("EDIT", "Edit", new { id = item.Id }) |       
+        @Html.ActionLink("DELETE", "Delete", new { id = item.Id })
+    </td>
+</tr>
+}
+
+</table>
